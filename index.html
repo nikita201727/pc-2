@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Панель доступу до ПК</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top right, #fbc2eb 0%, #a6c1ee 100%);
+      margin: 0;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .notice {
+      background: #e3fcec;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-weight: 600;
+      max-width: 800px;
+      margin-bottom: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .auth-box {
+      background: rgba(255,255,255,0.2);
+      padding: 20px 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      width: 100%;
+      max-width: 400px;
+    }
+    .auth-box input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+    }
+    .auth-box button {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, #00c9ff, #92fe9d);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+    }
+    .status-box {
+      margin-bottom: 20px;
+      padding: 15px 25px;
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .multi-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 20px;
+      max-width: 1000px;
+    }
+    .multi-buttons button {
+      padding: 14px 22px;
+      font-size: 1rem;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, #00c9ff, #92fe9d);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    .multi-buttons button:hover {
+      transform: scale(1.08);
+    }
+    .tools-section {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 16px;
+      max-width: 800px;
+      text-align: center;
+    }
+    .tools-section h2 {
+      margin-bottom: 16px;
+      color: #333;
+    }
+    .tools-section a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    .tools-section a:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>💫 Панель доступу до ПК</h1>
+
+  <div class="notice">
+    ⚠️ Правила користування: Заборонено відкривати сайти 18+, встановлювати шкідливе ПЗ або заражати систему вірусами.
+  </div>
+
+  <div class="auth-box">
+    <input type="text" id="login" placeholder="Ім’я користувача">
+    <input type="password" id="password" placeholder="Пароль">
+    <button onclick="submitLogin()">🔓 Увійти</button>
+  </div>
+
+  <div id="status" class="status-box">Статус ПК: 🔌 Підключено</div>
+
+  <div class="multi-buttons">
+    <button onclick="playSound(); openAnydesk()">🔗 Підключитись до AnyDesk</button>
+    <button onclick="playSound(); downloadAnydesk()">⬇️ Завантажити AnyDesk</button>
+    <button onclick="playSound(); openSettings()">⚙️ Налаштувати</button>
+    <button onclick="playSound(); openFile()">📁 Відкрити</button>
+    <button onclick="playSound(); startProcess()">🚀 Запуск</button>
+    <button onclick="playSound(); saveFile()">💾 Зберегти</button>
+    <button onclick="playSound(); showMessage()">🔘 Інша дія</button>
+    <button onclick="playSound(); alert('📸 Знімок екрана!')">📸 Знімок</button>
+    <button onclick="playSound(); alert('📊 Статистика')">📊 Статистика</button>
+    <button onclick="playSound(); alert('🧾 Журнал подій')">🧾 Журнал</button>
+    <button onclick="playSound(); alert('🌐 Відкрито браузер')">🌐 Браузер</button>
+    <button onclick="playSound(); alert('📂 Документи відкрито')">📂 Документи</button>
+    <button onclick="playSound(); alert('🔐 Ключ доступу перевірено')">🔐 Ключ</button>
+  </div>
+
+  <div class="tools-section">
+    <h2>🔧 Додаткові інструменти</h2>
+    <a href="https://www.google.com/chrome/" target="_blank">🌐 Браузер Chrome</a>
+    <a href="https://notepad-plus-plus.org/downloads/" target="_blank">📝 Notepad++</a>
+    <a href="https://www.videolan.org/vlc/" target="_blank">🎬 VLC Media Player</a>
+    <a href="https://www.7-zip.org/" target="_blank">🗜️ 7-Zip Архіватор</a>
+    <a href="https://telegram.org/" target="_blank">💬 Telegram</a>
+    <a href="https://discord.com/download" target="_blank">🎧 Discord</a>
+    <a href="https://www.mozilla.org/firefox/new/" target="_blank">🦊 Firefox</a>
+  </div>
+
+  <audio id="clickSound" src="https://cdn.jsdelivr.net/gh/itsron717/button-sound/button-click.mp3"></audio>
+
+  <script>
+    function playSound() {
+      const sound = document.getElementById("clickSound");
+      sound.currentTime = 0;
+      sound.play();
+    }
+    function submitLogin() {
+      const login = document.getElementById('login').value;
+      const password = document.getElementById('password').value;
+      if (login === 'admin' && password === '1234') {
+        document.getElementById('status').innerText = 'Статус ПК: ✅ Авторизовано';
+      } else {
+        alert('❌ Невірне ім’я або пароль!');
+      }
+    }
+    function openAnydesk() {
+      window.location.href = 'anydesk:1569315480';
+    }
+    function downloadAnydesk() {
+      window.open('https://anydesk.com/en/downloads/windows', '_blank');
+    }
+    function openSettings() {
+      alert('Налаштування відкрито');
+    }
+    function openFile() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.click();
+    }
+    function startProcess() {
+      alert('Процес запущено!');
+    }
+    function saveFile() {
+      const a = document.createElement('a');
+      const file = new Blob(['Збережені дані...'], { type: 'text/plain' });
+      a.href = URL.createObjectURL(file);
+      a.download = 'data.txt';
+      a.click();
+    }
+    function showMessage() {
+      alert('Функція в розробці');
+    }
+  </script>
+</body>
+</html>
